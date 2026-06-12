@@ -1,0 +1,15 @@
+{
+  "name": "time-coffee-community",
+  "version": "1.0.0",
+  "description": "A premium mobile application for TIME, a modern lifestyle brand combining specialty coffee, coworking, and community in Marrakech.",
+  "scripts": {
+    "build": "echo 'No build step required for ESM browser app'",
+    "start": "npx serve . -p $PORT"
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
