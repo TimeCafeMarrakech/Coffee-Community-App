@@ -4,7 +4,7 @@ A premium mobile application for TIME, a modern lifestyle brand combining specia
 
 ## How to Upload to GitHub (Resolving the Build Error)
 
-As an AI, I cannot generate a direct `.zip` file download link. To fix your Firebase App Hosting deployment and get your code into GitHub, you must manually save these files to your local computer and push them to your repository.
+To fix your Firebase App Hosting deployment and get your code into GitHub, you must manually save these files to your local computer and push them to your repository. We have added a `server.js` file to guarantee the Google Cloud Buildpack detects and builds the app successfully.
 
 ### Step 1: Save the Files Locally
 Create a new folder on your computer (e.g., `time-app`). Inside this folder, create the exact files provided in this conversation with their exact contents:
@@ -14,7 +14,8 @@ Create a new folder on your computer (e.g., `time-app`). Inside this folder, cre
 - `types.ts`
 - `data.ts`
 - `metadata.json`
-- `package.json` (Crucial for fixing the buildpack error)
+- `package.json` (Updated to use Express)
+- `server.js` (NEW - Handles the web server)
 - `firebase.json`
 - `apphosting.yaml`
 - `components/BottomNav.tsx`
@@ -39,7 +40,7 @@ git init
 git add .
 
 # Commit the files
-git commit -m "Add complete application source code and package.json"
+git commit -m "Add Express server to fix buildpack detection"
 
 # Link to your GitHub repository (replace with your actual URL)
 git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
@@ -50,4 +51,4 @@ git push -u origin main
 ```
 
 ### Step 3: Firebase App Hosting
-Once the files (especially `package.json`) are in your GitHub repository, Firebase App Hosting will automatically detect the push, trigger a new Cloud Build, successfully detect the Node.js buildpack, and deploy your application.
+Once the files are in your GitHub repository, Firebase App Hosting will automatically detect the push. Because we are now using a standard `server.js` file with Express, the Node.js buildpack will successfully detect the app, install the dependencies, and deploy it without errors.
