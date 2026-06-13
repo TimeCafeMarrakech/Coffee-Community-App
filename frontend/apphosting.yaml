@@ -1,6 +1,4 @@
 # Firebase App Hosting Configuration
-# This file configures the runtime environment for your application.
-
 runConfig:
   cpu: 1
   memoryMiB: 512
