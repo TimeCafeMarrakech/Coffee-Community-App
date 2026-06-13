@@ -1,54 +1,53 @@
-# TIME Coffee & Community
+# Vertex AI Studio Frontend App with Node.js Backend
 
-A premium mobile application for TIME, a modern lifestyle brand combining specialty coffee, coworking, and community in Marrakech.
+This repository contains a frontend and a Node.js backend, designed to run together.
+The backend acts as a proxy, handling Google Cloud API calls.
 
-## How to Upload to GitHub (Resolving the Build Error)
+This project is intended for demonstration and prototyping purposes only.
+It is not intended for use in a production environment.
 
-To fix your Firebase App Hosting deployment and get your code into GitHub, you must manually save these files to your local computer and push them to your repository. We have added a `server.js` file to guarantee the Google Cloud Buildpack detects and builds the app successfully.
+## Prerequisites
 
-### Step 1: Save the Files Locally
-Create a new folder on your computer (e.g., `time-app`). Inside this folder, create the exact files provided in this conversation with their exact contents:
-- `index.html`
-- `index.tsx`
-- `App.tsx`
-- `types.ts`
-- `data.ts`
-- `metadata.json`
-- `package.json` (Updated to use Express)
-- `server.js` (NEW - Handles the web server)
-- `firebase.json`
-- `apphosting.yaml`
-- `components/BottomNav.tsx`
-- `components/Logo.tsx`
-- `views/HomeView.tsx`
-- `views/OrderView.tsx`
-- `views/CommunityView.tsx`
-- `views/ExperiencesView.tsx`
-- `views/LoginView.tsx`
-- `views/CheckoutView.tsx`
-- `views/ChatView.tsx`
-- `views/StaffView.tsx`
+To run this application locally, you need:
 
-### Step 2: Push to GitHub
-Open your terminal or command prompt, navigate to your `time-app` folder, and run the following commands:
+*   **[Google Cloud SDK / gcloud CLI](https://cloud.google.com/sdk/docs/install)**: Follow the instructions to install the SDK.
+
+*   **gcloud Initialization**:
+    *   Initialize the gcloud CLI:
+        ```bash
+        gcloud init
+        ```
+    *   Authenticate for Application Default Credentials (needed to call Google Cloud APIs):
+        ```bash
+        gcloud auth application-default login
+        ```
+
+*   **Node.js and npm**: Ensure you have Node.js and its package manager, `npm`, installed on your machine.
+
+## Project Structure
+
+The project is organized into two main directories:
+
+*   `frontend/`: Contains the Frontend application code.
+*   `backend/`: Contains the Node.js/Express server code to proxy Google Cloud API calls.
+
+## Backend Environment Variables
+
+The `backend/.env.local` file is automatically generated when you download this application.
+It contains essential Google Cloud environment variables pre-configured based on your project settings at the time of download.
+
+The variables set in `backend/.env.local` are:
+*   `API_BACKEND_PORT`: The port the backend API server listens on (e.g., `5000`).
+*   `API_PAYLOAD_MAX_SIZE`: The maximum size of the request payload accepted by the backend server (e.g., `5mb`).
+*   `GOOGLE_CLOUD_LOCATION`: The Google Cloud region associated with your project.
+*   `GOOGLE_CLOUD_PROJECT`: Your Google Cloud Project ID.
+
+**Note:** These variables are automatically populated during the download process.
+You can modify the values in `backend/.env.local` if you need to change them.
+
+## Installation and Running the App
+
+To install dependencies and run your Google Cloud Vertex AI Studio App locally, execute the following command:
 
 ```bash
-# Initialize git
-git init
-
-# Add all your files
-git add .
-
-# Commit the files
-git commit -m "Add Express server to fix buildpack detection"
-
-# Link to your GitHub repository (replace with your actual URL)
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-
-# Push the code to the main branch
-git branch -M main
-git push -u origin main
-```
-
-### Step 3: Firebase App Hosting
-Once the files are in your GitHub repository, Firebase App Hosting will automatically detect the push. Because we are now using a standard `server.js` file with Express, the Node.js buildpack will successfully detect the app, install the dependencies, and deploy it without errors.
+npm install && npm run dev
