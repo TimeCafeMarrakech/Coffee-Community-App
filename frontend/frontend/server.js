@@ -42,6 +42,5 @@ app.get('*', (req, res) => {
 
 // Explicitly bind to 0.0.0.0 so the Cloud Run container can receive external traffic
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`TIME Coffee App listening on port ${PORT}`);
-  console.log(`Serving static files from: ${rootDir}`);
+  console.log(`Server is running on port ${PORT}`);
 });
