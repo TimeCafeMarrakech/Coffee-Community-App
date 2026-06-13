@@ -1,0 +1,9 @@
+# Firebase App Hosting Configuration
+# This file configures the runtime environment for your application.
+
+runConfig:
+  cpu: 1
+  memoryMiB: 512
+  concurrency: 80
+  minInstances: 0
+  maxInstances: 100
