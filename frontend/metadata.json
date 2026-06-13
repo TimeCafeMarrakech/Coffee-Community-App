@@ -1,0 +1,7 @@
+{
+  "name": "TIME Coffee & Community",
+  "description": "A premium mobile application for TIME, a modern lifestyle brand combining specialty coffee, coworking, and community in Marrakech.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
