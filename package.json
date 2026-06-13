@@ -1,14 +1,12 @@
 {
   "name": "time-coffee-community",
-  "version": "1.0.0",
-  "type": "module",
-  "description": "A premium mobile application for TIME, a modern lifestyle brand combining specialty coffee, coworking, and community in Marrakech.",
-  "main": "server.js",
+  "workspaces": ["frontend", "backend"], 
   "scripts": {
-    "build": "echo 'Build step complete.'",
-    "start": "node server.js"
+    "dev-frontend": "npm run dev --prefix frontend",
+    "dev-backend": "npm run dev --prefix backend",
+    "dev": "concurrently \"npm run dev-frontend\" \"npm run dev-backend\""
   },
-  "dependencies": {
-    "express": "^4.19.2"
+  "devDependencies": {
+    "concurrently": "latest"
   }
 }
